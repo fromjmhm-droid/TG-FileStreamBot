@@ -37,7 +37,7 @@ async def root_route_handler(_):
     )
 
 
-@routes.get(r"/{path:\S+}", allow_head=True)
+@routes.get(r"/{path:.*}", allow_head=True)
 async def stream_handler(request: web.Request):
     try:
         path = request.match_info["path"]
