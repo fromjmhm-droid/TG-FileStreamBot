@@ -8,6 +8,8 @@ RUN apk add build-base
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN pip uninstall -y pyrogram && pip install -U pyrofork
+
 COPY . .
 
 CMD ["python3","-m","WebStreamer"]
